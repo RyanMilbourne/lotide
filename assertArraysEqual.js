@@ -1,29 +1,27 @@
-const eqArrays = function(val1, val2) {
-  let result = '';
-  let printOut = ''
-  if (val1.length !== val2.length) {
-    result = false;
-  };
+const eqArrays = function(arr1, arr2) {
+  console.log("The values being compared are:", (arr1), "&", (arr2));
 
-  for (let i = 0; i < val1.length; i++) {
-    if (val1[i] === val2[i]) {
-      result = true;
-    } else {
-      result = false;
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+
+  for (let i = 0; i <= arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
     }
-  };
+  }
 
-  if (result === true) {
-    printOut = (("The result of the comparison is true ✅") + "\n");
-  } else {
-    printOut = ("The result of the comparison is false ⛔" + "\n");
-  };
-
-  console.log("The values being compared are:", (val1), "&", (val2));
-  console.log(printOut);
+  return true;
 };
 
-eqArrays([1, 2, 3, 4, '5'], [1, 2, 3, 4, 5])// => false)
-eqArrays([1, 2, 3], [3, 2, 1]) // => false)
-eqArrays([1, 2, 3], [1, 2, 3]) // => should PASS
-eqArrays(["Banana", 1, 2, 3], ["Banana", 1, 2, 3]); // => should PASS
+const assertArrayEq = function(arr1, arr2) {
+  const result = eqArrays(arr1, arr2);
+  if (result) {
+    console.log("True")
+  } else {
+    console.log("False")
+  }
+  return result
+};
+
+assertArrayEq([1, 2, 3], [4, 5, 6])
