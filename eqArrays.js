@@ -19,7 +19,6 @@ const eqArrays = function(val1, val2) {
       result = false;
     }
   }
-  // console.log(val1);
   console.log("The values being compared are:", (val1), "&", (val2));
   return result;
 };
