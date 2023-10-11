@@ -1,5 +1,5 @@
 const eqArrays = function(arr1, arr2) {
-  console.log("The values being compared are:", (arr1), "&", (arr2));
+  console.log("The values being compared are:", (arr1), "&", (arr2)); // To see what is being compared
   if (arr1.length !== arr2.length) {
     return false;
   }
@@ -37,6 +37,7 @@ const eqObjects = function(object1, object2) {
   }
 
   if (object1Keys.length !== object2Keys.length) {
+    console.log(`The values being compared are: ${object1Keys} & ${object2Keys}`); // Shows what is being compared if both objects "lengths" don't match
     return false;
   }
 
@@ -83,11 +84,8 @@ const mySweaterObject = {
   fit: "raluger"
 };
 
-assertEquals(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true); // => true
+assertEquals(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true);
 
-assertEquals(eqObjects(multiColorShirtObject, myShirtObject), true); // => false
+assertEquals(eqObjects(multiColorShirtObject, myShirtObject), true);
 
-assertEquals(eqObjects(myShirtObject, mySweaterObject), true); // => false
-
-//mentor note
-// console.log(typeof multiColorShirtObject === "object" && !Array.isArray(multiColorShirtObject));
+assertEquals(eqObjects(myShirtObject, mySweaterObject), true);
