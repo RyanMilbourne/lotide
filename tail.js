@@ -9,7 +9,7 @@ const tail = function(words) {
     output = '[]';
   }
   // This console.log prints out the tail values (everything but the head value)
-  console.log(`The tail values are ${output} \n`);
+  console.log(`The tail values are [${output}] \n`);
   return output;
 };
 
