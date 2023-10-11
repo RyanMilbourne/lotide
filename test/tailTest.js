@@ -1,15 +1,20 @@
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 const tail = require('../tail')
 
-// declaring these constants for simplicity while running assertEqual
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-const testPass = tail([1, 2, 3, 4, 5]);
-const testFail = tail(["apple"]);
+describe("#tail", () => {
+  it("returns [2, 3] for [1, 2, 3]", () => {
+    assert.deepEqual(tail([1, 2, 3]), [2, 3]);
+  });
 
-// test code
-assertEqual(result.length, 2);
-assertEqual(result[0], "Lighthouse");
-assertEqual(result[1], "Labs");
-assertEqual(testPass[0], 2);
+  it('returns  ["Lighthouse", "Labs"] for ["Hello", "Lighthouse", "Labs"]', () => {
+    assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"])
+  });
 
-assertEqual(testFail, "Supposed to fail");
+  it("returns [2, 3, 4, 5] for [1, 2, 3, 4, 5]", () => {
+    assert.deepEqual(tail([1, 2, 3, 4, 5]), [2, 3, 4, 5])
+  });
+
+  it("returns [] for ['apple']", () => {
+    assert.deepEqual(tail(["apple"]), '[]')
+  });
+})
