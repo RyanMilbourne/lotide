@@ -1,0 +1,26 @@
+{
+  "name": "@__ryan_m__/lotide",
+  "version": "1.0.0",
+  "description": "A student created clone of lodash library - made during the LHL Web Flex program",
+  "main": "assertArraysEqual.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyanMilbourne/lotide.git"
+  },
+  "author": "Ryan Milbourne <info@ryanmilbourne.design> (https://www.ryanmilbourne.design/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RyanMilbourne/lotide/issues"
+  },
+  "homepage": "https://github.com/RyanMilbourne/lotide#readme",
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "mocha": "^9.2.2"
+  }
+}
