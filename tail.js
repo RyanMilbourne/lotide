@@ -6,7 +6,7 @@ const tail = function(words) {
       output.push(words[i]);
     }
   } else if (words.length <= 1) {
-    output = '[]';
+    return output;
   }
   // This console.log prints out the tail values (everything but the head value)
   console.log(`The tail values are [${output}]`);
