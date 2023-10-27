@@ -1,5 +1,5 @@
-const assertEqual = require('../assertEqual')
-const findKey = require('../findkey')
+const assertEqual = require('../assertEqual');
+const findKey = require('../findkey');
 
 assertEqual(findKey({
   "Blue Hill": { stars: 1 },
