@@ -12,34 +12,13 @@ const letterPositions = function(sentence) {
   return results;
 };
 
-// letterPositions("abcdefgabcdefg"); // testing if letterPositions works
+// test runs
+/*
+const assertArraysEqual = require('./assertArraysEqual');
 
-const eqArrays = function(arr1, arr2) {
-  console.log("The values being compared are:", (arr1), "&", (arr2));
+assertArraysEqual(letterPositions("hello").e, [1]); // will return 'true'
+assertArraysEqual(letterPositions("ryan").r, [1]); // will return 'false'
+assertArraysEqual(letterPositions("ryan").r, [0]); // will return 'true'
+*/
 
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-
-  for (let i = 0; i <= arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-
-  return true;
-};
-
-const assertArrayEq = function(arr1, arr2) {
-  const result = eqArrays(arr1, arr2);
-  if (result) {
-    console.log("✅ True ✅" + ('\n'));
-  } else {
-    console.log("❌ False ❌" + ('\n'));
-  }
-  return result;
-};
-
-assertArrayEq(letterPositions("hello").e, [1]); // will return 'true'
-assertArrayEq(letterPositions("ryan").r, [1]); // will return 'false'
-assertArrayEq(letterPositions("ryan").r, [0]); // will return 'true''
+module.exports = letterPositions;
