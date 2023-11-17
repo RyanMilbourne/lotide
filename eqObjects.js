@@ -70,7 +70,7 @@ const mySweaterObject = {
 
 // test runs
 
-console.log(eqObjects(multiColorShirtObject, multiColorShirts)); // true
-console.log(eqObjects(myShirtObject, mySweaterObject)); // false
+eqObjects(multiColorShirtObject, multiColorShirts); // true
+eqObjects(myShirtObject, mySweaterObject); // false
 
 module.exports = eqObjects;
