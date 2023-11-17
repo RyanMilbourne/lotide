@@ -8,7 +8,6 @@ const tail = function(words) {
   } else if (words.length <= 1) {
     return output;
   }
-  // This console.log prints out the tail values (everything but the head value)
   console.log(`The tail values are [${output}]`);
   return output;
 };
