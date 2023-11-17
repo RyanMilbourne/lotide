@@ -24,6 +24,6 @@ const firstNames = [
   "Joe"
 ];
 
-const exampleRun = countOnly(firstNames, { Fang: true, Salima: true });
+countOnly(firstNames, { Fang: true, Salima: true }); // { Salima: 2, Fang: 2 }
 
-console.log(exampleRun);
+module.exports = countOnly;
