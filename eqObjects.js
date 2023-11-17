@@ -1,28 +1,11 @@
-const eqArrays = function(arr1, arr2) {
-  console.log("The values being compared are:", (arr1), "&", (arr2)); // To see what is being compared
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i <= arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertEquals = function(actual, expected) {
-  if (actual === expected) {
-    console.log((`✅✅✅ Assertion Passed: ${actual} === ${expected}`) + "\n");
-  } else {
-    console.log((`⛔⛔⛔ Assertion Failed: ${actual} !== ${expected}`) + "\n");
-  }
-};
-
+const eqArrays = require('./eqArrays')
+const assertEquals = require('./assertEqual');
 
 const isArray = (arr) => {
   if (Array.isArray(arr)) {
     return true;
+  } else {
+    return false;
   }
 };
 
@@ -32,12 +15,11 @@ const eqObjects = function(object1, object2) {
 
   for (let key of object1Keys) {
     if (object2.hasOwnProperty(key) !== true) {
-      return false; // Key in object1 is missing in object2
+      return false;
     }
   }
 
   if (object1Keys.length !== object2Keys.length) {
-    console.log(`The values being compared are: ${object1Keys} & ${object2Keys}`); // Shows what is being compared if both objects "lengths" don't match
     return false;
   }
 
@@ -48,6 +30,7 @@ const eqObjects = function(object1, object2) {
       }
     }
   }
+
   for (let key in object1) {
     if (object2.hasOwnProperty(key) && object1[key].length !== object2[key].length) {
       return false;
@@ -56,18 +39,19 @@ const eqObjects = function(object1, object2) {
       return false;
     }
   }
+
   return true;
 };
 
 
-//test runs
+//test objects
 
 const multiColorShirtObject = {
   colors: ["red", "blue"],
   size: "medium"
 };
 
-const anotherMultiColorShirtObject = {
+const multiColorShirts = {
   colors: ["red", "blue"],
   size: "medium"
 };
@@ -84,8 +68,10 @@ const mySweaterObject = {
   fit: "raluger"
 };
 
-assertEquals(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true);
 
-assertEquals(eqObjects(multiColorShirtObject, myShirtObject), true);
+// test runs
 
-assertEquals(eqObjects(myShirtObject, mySweaterObject), true);
+console.log(eqObjects(multiColorShirtObject, multiColorShirts)) // true
+console.log(eqObjects(myShirtObject, mySweaterObject)) // false
+
+module.exports = eqObjects;
