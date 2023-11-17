@@ -1,5 +1,3 @@
-const assertEquals = require('./assertEqual');
-
 const countLetters = function(str) {
   let characterCount = {};
 
@@ -12,18 +10,5 @@ const countLetters = function(str) {
   }
   return characterCount;
 };
-
-// test runs
-
-const test = countLetters("abbccc");
-
-const testTwo = countLetters("effggg");
-
-assertEquals(test["a"], 1); // should pass
-assertEquals(test["b"], 2); // should pass
-assertEquals(test["c"], 3); // should pass
-
-assertEquals(testTwo["c"], undefined); // should pass
-assertEquals(testTwo["e"], undefined); // should fail
 
 module.exports = countLetters;
