@@ -1,8 +1,8 @@
 {
   "name": "@__ryan_m__/lotide",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A student created clone of lodash library - made during the LHL Web Flex program",
-  "main": "assertArraysEqual.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
