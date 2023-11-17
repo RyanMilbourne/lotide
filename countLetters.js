@@ -1,11 +1,4 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-
-  } else {
-    console.log(`⛔⛔⛔ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEquals = require('./assertEqual');
 
 const countLetters = function(str) {
   let characterCount = {};
@@ -20,15 +13,17 @@ const countLetters = function(str) {
   return characterCount;
 };
 
-countLetters("abbccc");
+// test runs
 
 const test = countLetters("abbccc");
 
 const testTwo = countLetters("effggg");
 
-assertEqual(test["a"], 1); // should pass
-assertEqual(test["b"], 2); // should pass
-assertEqual(test["c"], 3); // should pass
+assertEquals(test["a"], 1); // should pass
+assertEquals(test["b"], 2); // should pass
+assertEquals(test["c"], 3); // should pass
 
-assertEqual(testTwo["c"], undefined); // should pass
-assertEqual(testTwo["e"], undefined); // should fail
+assertEquals(testTwo["c"], undefined); // should pass
+assertEquals(testTwo["e"], undefined); // should fail
+
+module.exports = countLetters;
