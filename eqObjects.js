@@ -1,13 +1,5 @@
 const eqArrays = require('./eqArrays');
 
-const isArray = (arr) => {
-  if (Array.isArray(arr)) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
 const eqObjects = function(object1, object2) {
   const object1Keys = Object.keys(object1);
   const object2Keys = Object.keys(object2);
@@ -23,7 +15,7 @@ const eqObjects = function(object1, object2) {
   }
 
   for (let key of object1Keys) {
-    if (isArray(object1Keys[key])) {
+    if (Array.isArray(object1Keys[key])) {
       if (!eqArrays(object1Keys[key], object2Keys[key])) {
         return false;
       }
@@ -41,36 +33,5 @@ const eqObjects = function(object1, object2) {
 
   return true;
 };
-
-
-//test objects
-
-const multiColorShirtObject = {
-  colors: ["red", "blue"],
-  size: "medium"
-};
-
-const multiColorShirts = {
-  colors: ["red", "blue"],
-  size: "medium"
-};
-
-const myShirtObject = {
-  size: "medium",
-  colors: ["red", "blue"],
-  fit: "regular"
-};
-
-const mySweaterObject = {
-  size: "medium",
-  colors: ["der", "eulb"],
-  fit: "raluger"
-};
-
-
-// test runs
-
-eqObjects(multiColorShirtObject, multiColorShirts); // true
-eqObjects(myShirtObject, mySweaterObject); // false
 
 module.exports = eqObjects;
