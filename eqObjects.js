@@ -1,5 +1,4 @@
-const eqArrays = require('./eqArrays')
-const assertEquals = require('./assertEqual');
+const eqArrays = require('./eqArrays');
 
 const isArray = (arr) => {
   if (Array.isArray(arr)) {
@@ -71,7 +70,7 @@ const mySweaterObject = {
 
 // test runs
 
-console.log(eqObjects(multiColorShirtObject, multiColorShirts)) // true
-console.log(eqObjects(myShirtObject, mySweaterObject)) // false
+console.log(eqObjects(multiColorShirtObject, multiColorShirts)); // true
+console.log(eqObjects(myShirtObject, mySweaterObject)); // false
 
 module.exports = eqObjects;
