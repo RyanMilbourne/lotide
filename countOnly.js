@@ -10,20 +10,4 @@ const countOnly = (items, object) => {
   return result;
 };
 
-// test run
-
-const firstNames = [
-  "Karl",
-  "Salima",
-  "Agouhanna",
-  "Fang",
-  "Kavith",
-  "Jason",
-  "Salima",
-  "Fang",
-  "Joe"
-];
-
-countOnly(firstNames, { Fang: true, Salima: true }); // { Salima: 2, Fang: 2 }
-
 module.exports = countOnly;
