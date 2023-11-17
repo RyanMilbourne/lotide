@@ -12,13 +12,4 @@ const letterPositions = function(sentence) {
   return results;
 };
 
-// test runs
-/*
-const assertArraysEqual = require('./assertArraysEqual');
-
-assertArraysEqual(letterPositions("hello").e, [1]); // will return 'true'
-assertArraysEqual(letterPositions("ryan").r, [1]); // will return 'false'
-assertArraysEqual(letterPositions("ryan").r, [0]); // will return 'true'
-*/
-
 module.exports = letterPositions;
